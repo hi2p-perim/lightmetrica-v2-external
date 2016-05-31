@@ -23,3 +23,6 @@ Binary distribution for windows environment.
 - assimp
     + https://github.com/assimp/assimp
     + rev. 11d0085
+- Eigen
+    + http://eigen.tuxfamily.org
+    + 3.2.8
