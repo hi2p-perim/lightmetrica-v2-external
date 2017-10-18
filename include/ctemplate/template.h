@@ -324,9 +324,6 @@ class CTEMPLATE_DLL_DECL Template {
   static bool StringToTemplateCache(const TemplateString& key,
                                     const char* content, Strip);
 
-  // INSTEAD, use ReloadAllIfChanged.
-  bool ReloadIfChanged();
-
  protected:
   friend class SectionTemplateNode;  // for access to set_state(), ParseState
   friend class TemplateTemplateNode; // for recursive call to Expand()
@@ -487,6 +484,5 @@ class CTEMPLATE_DLL_DECL Template {
 };
 
 }
-
 
 #endif // CTEMPLATE_TEMPLATE_H_

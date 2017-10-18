@@ -33,6 +33,8 @@
 #ifndef TEMPLATE_FIND_PTR_H_
 #define TEMPLATE_FIND_PTR_H_
 
+#include <cstddef>
+
 // NOTE: if you are statically linking the template library into your binary
 // (rather than using the template .dll), set '/D CTEMPLATE_DLL_DECL='
 // as a compiler flag in your project file to turn off the dllimports.
@@ -45,8 +47,8 @@ namespace ctemplate {
 template <class T, class U>
 const typename T::value_type* find_ptr0(const T& c, U v)
 {
-    typename T::const_iterator i = c.find(v);
-    return i == c.end() ? NULL : &*i;
+  typename T::const_iterator i = c.find(v);
+  return i == c.end() ? NULL : &*i;
 }
 
 template <class T, class U>

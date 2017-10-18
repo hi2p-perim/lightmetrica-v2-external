@@ -34,7 +34,7 @@
 #ifndef TEMPLATE_TEMPLATE_CACHE_H_
 #define TEMPLATE_TEMPLATE_CACHE_H_
 
-#include <unordered_map>      // for stdext::hash_map<>
+#include <unordered_map>
 #include <string>        // for string
 #include <utility>       // for pair
 #include <vector>        // for vector<>
@@ -56,8 +56,8 @@ class TemplateCacheUnittest;
 extern template class __declspec(dllimport) std::allocator<std::string>;
 extern template class __declspec(dllimport) std::vector<std::string>;
 #else
-//template class __declspec(dllexport) std::allocator<std::string>;
-//template class __declspec(dllexport) std::vector<std::string>;
+template class __declspec(dllexport) std::allocator<std::string>;
+template class __declspec(dllexport) std::vector<std::string>;
 #endif
 
 namespace ctemplate {
@@ -288,8 +288,7 @@ class CTEMPLATE_DLL_DECL TemplateCache {
  public:
   typedef std::pair<TemplateId, int> TemplateCacheKey;
  private:
-  typedef std::unordered_map<TemplateCacheKey, CachedTemplate, TemplateCacheHash>
-    TemplateMap;
+  typedef std::unordered_map<TemplateCacheKey, CachedTemplate, TemplateCacheHash> TemplateMap;
   typedef std::unordered_map<RefcountedTemplate*, int, RefTplPtrHash> TemplateCallMap;
   // Where to search for files.
   typedef std::vector<std::string> TemplateSearchPath;
